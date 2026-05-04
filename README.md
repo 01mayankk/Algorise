@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Algorise - Interactive Algorithm Mastery Platform
 
-## Getting Started
+Visualize, Learn, Master Algorithms.
 
-First, run the development server:
+Algorise is a production-grade, portfolio-quality Interactive Algorithm Visualizer web application.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Features
+- **Interactive Visualizations:** Canvas and D3.js based animations for sorting, searching, graphs, trees, and more.
+- **Step-by-step Explanations:** Understand algorithms with clear, plain English explanations at every step.
+- **Code Highlights:** See exactly which line of code is executing in Python, JavaScript, and C++.
+- **Compare Algorithms:** Run two algorithms side-by-side to understand performance differences.
+- **Test Your Knowledge:** Built-in quizzes to reinforce learning.
+
+## Tech Stack
+- Next.js 14 (App Router)
+- TypeScript (Strict Mode)
+- Tailwind CSS & Shadcn/UI
+- Zustand (State Management)
+- GSAP & Framer Motion (Animations)
+- Monaco Editor (Code Views)
+- D3.js & Canvas API (Visualizations)
+
+## Project Roadmap
+
+```mermaid
+graph TD
+    A[Phase 1: Project Setup<br/>Next.js, TypeScript, Tailwind] --> B[Phase 2: UI Components<br/>Shadcn/UI, Layout, Stores]
+    B --> C[Phase 3: Sorting Algorithms<br/>15 algorithms, Visualizer, Quizzes]
+    C --> D[Phase 4: Searching Algorithms<br/>Linear & Binary Search]
+    D --> E[Phase 5: Graph & Tree Visualizers<br/>Graph algorithms, Tree structures]
+    E --> F[Phase 6: Data Structures<br/>Stacks, Queues, Heaps, etc.]
+    F --> G[Phase 7: Advanced Algorithms<br/>DP, Greedy, Backtracking]
+    G --> H[Phase 8: Bonus Features<br/>Comparisons, Advanced viz]
+    H --> I[Phase 9: Polish & Deploy<br/>Testing, Optimization, Launch]
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Current Status
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Completed Phases:
+- **Phase 1:** Initialized Next.js 14 App Router project with TypeScript and Tailwind CSS. Configured absolute imports, Prettier, and ESLint.
+- **Phase 2:** Installed and setup Shadcn/UI components (Buttons, Sliders, Tabs, Tooltips, Toasts/Sonner). Setup Zustand stores (`visualizationStore.ts`, `dataStore.ts`, `uiStore.ts`). Built Layout components (`Sidebar.tsx`, `Navbar.tsx`, `ThemeToggle.tsx`, `ThemeProvider.tsx`). Configured initial layout and basic routing structure.
+- **Phase 3:** Built the `ArrayVisualizer.tsx` using Canvas API. Created the GSAP timeline controller hook (`useVisualization.ts`). Implemented UI Controls: `PlaybackControls.tsx`, `SpeedSlider.tsx`, `ArrayInput.tsx`. Built the `StepExplanation.tsx` and `ComplexityBadge.tsx` panels. Implemented all 15 sorting algorithms with metadata, 3 languages, and 5 quizzes each. Added `CodePanel.tsx` (Monaco) and `QuizModal.tsx`.
+- **Phase 4:** Added `SearchTargetInput.tsx` for dynamic search goals. Implemented Linear Search and Binary Search algorithms. Created dynamic searching page `[slug]/page.tsx`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Upcoming Phases:
+- **Phase 5:** Graph & Tree Visualizers
+- **Phase 6:** Data Structures
+- **Phase 7:** Dynamic Programming & Greedy
+- **Phase 8:** Bonus Features
+- **Phase 9:** Polish
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Running Locally
+```bash
+npm install
+npm run dev
+```
