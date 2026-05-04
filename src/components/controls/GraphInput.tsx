@@ -61,7 +61,7 @@ export function GraphInput() {
       for (let j = i + 1; j < numNodes; j++) {
         if (Math.random() > 0.5) {
           edges.push({
-            id: \`\${nodes[i].id}-\${nodes[j].id}\`,
+            id: `${nodes[i].id}-${nodes[j].id}`,
             source: nodes[i].id,
             target: nodes[j].id,
             weight: Math.floor(Math.random() * 10) + 1
@@ -72,7 +72,7 @@ export function GraphInput() {
 
     // Guarantee it's connected (simple path A->B->C...)
     for (let i = 0; i < numNodes - 1; i++) {
-      const id = \`\${nodes[i].id}-\${nodes[i+1].id}\`;
+      const id = `${nodes[i].id}-${nodes[i+1].id}`;
       if (!edges.find(e => e.id === id && e.source === nodes[i].id && e.target === nodes[i+1].id)) {
          edges.push({ id, source: nodes[i].id, target: nodes[i+1].id, weight: 1 });
       }
@@ -87,19 +87,19 @@ export function GraphInput() {
      
      for (let row = 0; row < 3; row++) {
        for (let col = 0; col < 3; col++) {
-         const id = \`\${row}-\${col}\`;
+         const id = `${row}-${col}`;
          nodes.push({
            id,
-           label: \`\${row},\${col}\`,
+           label: `${row},${col}`,
            x: 150 + col * 120,
            y: 60 + row * 100,
          });
          
          if (col > 0) {
-           edges.push({ id: \`\${row}-\${col-1}-to-\${row}-\${col}\`, source: \`\${row}-\${col-1}\`, target: id, weight: 1 });
+           edges.push({ id: `${row}-${col-1}-to-${row}-${col}`, source: `${row}-${col-1}`, target: id, weight: 1 });
          }
          if (row > 0) {
-           edges.push({ id: \`\${row-1}-\${col}-to-\${row}-\${col}\`, source: \`\${row-1}-\${col}\`, target: id, weight: 1 });
+           edges.push({ id: `${row-1}-${col}-to-${row}-${col}`, source: `${row-1}-${col}`, target: id, weight: 1 });
          }
        }
      }
